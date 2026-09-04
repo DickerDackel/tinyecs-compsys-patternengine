@@ -29,10 +29,9 @@ class Emitter:
     factory: Callable
 
 
-def sys_emitter(dt: float, eid: EntityID, emitter: Emitter, prsa: PRSA):
+def sys_emitter(eid: EntityID, emitter: Emitter, prsa: PRSA):
     """Run an emit callback if the emitter fires.
 
-    :param dt: Delta time
     :param eid: The entity ID
     :param emitter: The :class:`Emitter` object
     :param prsa: The PRSA transform object of the entity
