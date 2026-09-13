@@ -1,19 +1,21 @@
-FIXME API
-=========
+tinyecs-compsys-patternengine API
+========================
 
 .. contents::
    :class: this-will-duplicate-information-and-it-is-still-useful-here
 
-Core classes
-------------
+Components
+----------
 
-.. autoclass:: FIXME.module.ClassA
-.. autoclass:: FIXME.module.ClassB
-.. autoclass:: FIXME.module.ClassC
+Registers the following CIDs to ``tinyecs-compsy.Comp``:
 
-Functions
----------
+* EMITTER
 
-.. autofunction:: FIXME.module.function_a
-.. autofunction:: FIXME.module.function_b
-.. autofunction:: FIXME.module.function_c
+.. autoclass:: tinyecs.compsys.patternengine.Emitter
+   :members:
+
+
+Systems
+-------
+
+.. autofunction:: tinyecs.compsys.patternengine.sys_emitter

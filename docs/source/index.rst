@@ -1,12 +1,11 @@
-FIXME - Long description of FIXME
-=================================
+tinyecs-compsys-patternengine - patternengine compsys for tinyecs
+=================================================================
 
 .. toctree::
    :caption: Contents:
 
    introduction
    api
-   glossary
    license
 
 Index
