@@ -21,7 +21,8 @@ license-files = ["LICENSE"]
 dependencies = [
     'aenum',
     'pyglm',
-    'tinyecs',
+    'patternengine @ git+https://forgejo.indieandmore.photography/dickerdackel/patternengine',
+    'tinyecs-compsys @ git+https://forgejo.indieandmore.photography/dickerdackel/tinyecs-compsys',
 ]
 
 [dependency-groups]
