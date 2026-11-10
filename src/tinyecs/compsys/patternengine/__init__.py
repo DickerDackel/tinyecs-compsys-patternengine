@@ -8,7 +8,7 @@ from aenum import extend_enum
 from patternengine import BulletSource
 from tinyecs import EntityID
 from tinyecs.compsys import Comp
-from tinyecs.compsys.sdl2 import PRSA
+from tinyecs.compsys.dynamics import PRSA
 
 
 extend_enum(Comp, 'EMITTER')

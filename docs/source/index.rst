@@ -6,6 +6,7 @@ tinyecs-compsys-patternengine - patternengine compsys for tinyecs
 
    introduction
    api
+   ai-policy
    license
 
 Index

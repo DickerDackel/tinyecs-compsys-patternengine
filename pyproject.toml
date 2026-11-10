@@ -1,5 +1,5 @@
 [project]
-name = "tinyecs.compsys.patternengine"
+name = "tinyecs-compsys-patternengine"
 description = "patternengine component and system library for tinyecs"
 version = "0.0.1"
 readme = "README.rst"
@@ -20,18 +20,10 @@ license-files = ["LICENSE"]
 
 dependencies = [
     'aenum',
-    'pyglm',
-    'patternengine @ git+https://forgejo.indieandmore.photography/dickerdackel/patternengine',
-    'tinyecs-compsys @ git+https://forgejo.indieandmore.photography/dickerdackel/tinyecs-compsys',
-]
-
-[dependency-groups]
-docs = [
-    "build",
-    "setuptools",
-    "sphinx",
-    "sphinx-autobuild",
-    "furo",
+    'patternengine',
+    'tinyecs >= 0.5.0',
+    'tinyecs-compsys',
+    'tinyecs-compsys-dynamics',
 ]
 
 [project.urls]
