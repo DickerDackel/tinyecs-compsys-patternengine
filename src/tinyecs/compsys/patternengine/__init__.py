@@ -17,16 +17,19 @@ extend_enum(Comp, 'EMITTER')
 @dataclass
 class Emitter:
     """A component holding data for an emitter.
+
     :param bullet_source: See :class:`patternengine.engine.BulletSource`
     :param factory: The callback to launch bullets.
 
-    The prototype for ``factory`` is
+    The prototype for ``factory`` is::
 
-        def factory(pos: Vector, momentum: Vector)
+        def factory(pos: glm.vec2, momentum: glm.vec2) -> None:
+            ...
+
     """
 
     bullet_source: BulletSource
-    factory: Callable
+    factory: Callable[[glm.vec2, glm.vec2], None]
 
 
 def sys_emitter(eid: EntityID, emitter: Emitter, prsa: PRSA):
@@ -36,9 +39,18 @@ def sys_emitter(eid: EntityID, emitter: Emitter, prsa: PRSA):
     :param emitter: The :class:`Emitter` object
     :param prsa: The PRSA transform object of the entity
 
-    The `patternengine` emits position relative to ``(0, 0)``.  ``prsa.pos``
-    of the emitter will be added to that before sending position and momentum
-    to the factory callback.
+    The `patternengine` emits positions relative to ``(0, 0)``, and a
+    normalized momentum vector, both dependent of the chosen ring type in the
+    ``BulletSource``.
+
+    The position will be rotated by the emitter's angle in degrees, after
+    that, the emitter's position will be added to it.
+
+    The momentum will also be rotated by the emitter's angle.
+
+    Then both will be passed to the factory callback.
+
+    Once the emitter is exhausted, the entity is marked as killed.
     """
 
     try:
@@ -50,4 +62,5 @@ def sys_emitter(eid: EntityID, emitter: Emitter, prsa: PRSA):
     rad = glm.radians(prsa.rotation)
     for pos, momentum in chunk:
         real_momentum = glm.rotate(momentum, rad)
-        emitter.factory(pos + prsa.pos, real_momentum)
+        real_pos = glm.rotate(pos, rad)
+        emitter.factory(real_pos + prsa.pos, real_momentum)

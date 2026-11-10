@@ -1,5 +1,5 @@
 tinyecs-compsys-patternengine API
-========================
+=================================
 
 .. contents::
    :class: this-will-duplicate-information-and-it-is-still-useful-here
@@ -7,7 +7,7 @@ tinyecs-compsys-patternengine API
 Components
 ----------
 
-Registers the following CIDs to ``tinyecs-compsy.Comp``:
+Registers the following CIDs to ``tinyecs.compsys.Comp``:
 
 * EMITTER
 
