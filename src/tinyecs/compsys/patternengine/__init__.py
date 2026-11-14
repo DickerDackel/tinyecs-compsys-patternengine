@@ -64,3 +64,6 @@ def sys_emitter(eid: EntityID, emitter: Emitter, prsa: PRSA):
         real_momentum = glm.rotate(momentum, rad)
         real_pos = glm.rotate(pos, rad)
         emitter.factory(real_pos + prsa.pos, real_momentum)
+
+
+__all__ = ['Emitter', 'sys_emitter']
